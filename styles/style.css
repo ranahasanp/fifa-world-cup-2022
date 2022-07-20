@@ -5,13 +5,14 @@
 /* common style and utilities */
 body{
     font-family: 'Poppins', sans-serif;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    
 }
 /* ===header section styles==== */
 .container{
     margin-bottom: 130px; 
+    display: flex;
+    align-items: center;
+    flex-direction: column;
 }
 .world-cup{
     background-color: #161616;
@@ -24,6 +25,35 @@ body{
     grid-template-columns: repeat(2,1fr);
     align-items: center;
     
+}
+.world-cup-images{
+    transition: 2s;
+}
+
+.world-cup-images:hover{
+    animation: world-cup;
+    animation: world-cup 5s ease infinite alternate; 
+    
+}
+@keyframes world-cup {
+    0%{
+        background-image: url('../images/wc-02.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    50%{
+        background-image: url('../images/wc-trophy.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    100%{
+            background-image: url('../images/telstar.png');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
 }
 .world-cup-info{
     padding:111px 106px;
@@ -51,7 +81,7 @@ body{
     color:#ffffff;
 }
 /* content styles */
-.content{
+.world-cup-content{
     display: flex;
  
 }
@@ -60,28 +90,46 @@ body{
     width: 312px;
     height: 312px;
     background-color: #161616;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-right: 30px;
 }
  .menu a{
     display:inline-block;
     border-radius: 10px;
     width: 220px;
-    background-color: #ffffff;
     color: #161616;
     text-decoration: none;
     padding:17px;
     margin: 20px 30px;
     text-align: center;
 }
-/* blogs styles */
+.button-blog{
+    background-color: #ffffff;
+}
+.marked-button{
+    background-color: blue ;
+}
+/* ====blogs styles==== */
 .blogs{
     display: grid;
     grid-template-columns: repeat(3 , 1fr);
     column-gap: 24px;
+    row-gap: 24px;
 }
-.blog{
+.game-blog{
     width:312px;
+    border: 1px solid lightgray;
+    border-radius: 15px;
+}
+.game-blog-info{
+    padding-left: 25px;
+}
+.game-info{
+    display: flex;
+}
+.game-info p{
+    padding-left: 25px ;
+
 }
 .blog-title{
     font-size: 18px;
@@ -95,4 +143,264 @@ body{
     font-weight: 700;
     border-radius: 5px;
     margin-top: 10px;
+}
+.game-blog-btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+.view-all{
+    background-color: #DD0000;
+    border-radius: 5px; 
+}
+.view-all a{
+    display: inline-block;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: none;
+    padding:12px 29px;
+}
+
+/* =====footer styles==== */
+.footer-section{
+    background-color: #161616;
+    margin-top: 130px;
+}
+.goal{
+    color:#ffffff;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 600;
+    padding:130px 0px 30px 0px;   
+}
+.footer-section hr{
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 1320px;
+}
+.footer-menu{
+    display: flex;
+    justify-content: center;
+    padding:50px 0px 130px 0px;
+}
+.footer-menu a{
+    text-decoration: none;
+    font-size: 16px;
+    color: #B9B9B9;
+    padding-right: 50px;
+}
+.social{
+    display: flex;
+    justify-content: center;
+}
+.social a{
+    padding:0px 30px 30px 0px;
+    font-size: 30px;
+}
+
+/* ====Upcoming match style==== */
+/* =====world cup matches styles==== */
+.world-cup-matches{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 24px;
+    row-gap: 24px;
+}
+.match-marked-button{
+    background-color: green;
+}
+.match{
+    border: 1px solid lightgray;
+    border-radius: 15px;
+    
+}
+.opponent{
+    display: flex;
+    justify-content: center;
+    padding-top: 53px; 
+}
+.match .opponent img{
+    margin:0px 21px;
+}
+.match .match-info{
+    text-align: center;
+    padding-bottom: 53px;
+}
+.match .match-info h2{
+    font-size: 20px;
+    color: #161616;
+}
+.match .match-info p{
+    font-size: 16px;
+    color: #4D4D4D;
+}
+
+/* =====media queries styles==== */
+/* ====media queries for mobile device==== */
+@media only screen and (max-width: 688px){
+    .container{
+        margin-bottom: 0;
+    }
+    .world-cup{
+        width: 100%;
+    }
+    .world-cup-content{
+        margin-bottom: 10px;
+        flex-direction: column;
+        row-gap: 24px;
+        align-items: center;
+    }
+    .menu{
+        background-color: transparent;
+        align-items: center;
+    }
+    .menu a{
+        border: 1px solid #E8E8E8;
+    }
+    .world-cup-detail,.blogs{   
+        grid-template-columns: repeat(1, 1fr);
+        
+    }
+    .footer-menu{
+        flex-direction: column;
+        align-items: center;
+        
+    }
+    .footer-menu a{
+        padding-top: 20px;
+    }
+    .game-blog-btn{
+        display: none;
+    }
+    
+}
+/* =====media queries styles==== */
+/* ====media queries for tablet device==== */
+@media only screen and (min-width:688px) and (max-width:992px){
+    .container {
+            margin-bottom: 0;
+        }
+    
+        .world-cup {
+            width: 100%;
+        }
+    
+        .world-cup-content {
+            margin-bottom: 10px;
+            flex-direction: column;
+            row-gap: 24px;
+            align-items: center;
+        }
+    
+        .menu {
+            background-color: transparent;
+            display: flex;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+        }
+        .menu a {
+            border: 1px solid #E8E8E8;
+        }
+        .last-blog{
+            display: none;
+        }
+        .game-blog-btn{
+            display: block;
+        }
+    .blogs{
+        grid-template-columns: repeat(2, 1fr);  
+    }
+}
+/* =====media queries styles==== */
+/* ====media queries for large device==== */
+@media only screen and (min-width:992px) {
+    .game-blog-btn{
+        display: none;
+    }
+}
+
+/* =====media queries styles upcoming match==== */
+/* ====media queries for mobile device==== */
+@media only screen and (max-width: 688px) {
+    .container {
+        margin-bottom: 0;
+    }
+
+    .world-cup {
+        width: 100%;
+    }
+
+    .world-cup-content {
+        margin-bottom: 10px;
+        flex-direction: column;
+        row-gap: 24px;
+        align-items: center;
+    }
+
+    .menu {
+        background-color: transparent;
+        align-items: center;
+    }
+
+    .menu a {
+        border: 1px solid #E8E8E8;
+    }
+
+    .world-cup-detail,.world-cup-matches {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .footer-menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-menu a {
+        padding-top: 20px;
+    }
+
+}
+/* =====media queries styles upcoming match==== */
+/* ====media queries for tablet device==== */
+@media only screen and (min-width:688px) and (max-width:992px) {
+    .container {
+        margin-bottom: 0;
+    }
+
+    .world-cup {
+        width: 100%;
+    }
+
+    .world-cup-content {
+        margin-bottom: 10px;
+        flex-direction: column;
+        row-gap: 24px;
+        align-items: center;
+    }
+
+    .menu {
+        background-color: transparent;
+        display: flex;
+        justify-content: center;
+        height: 100%;
+        width: 100%;
+    }
+
+    .menu a {
+        border: 1px solid #E8E8E8;
+    }
+
+    .last-blog {
+        display: none;
+    }
+
+    .game-blog-btn {
+        display: block;
+    }
+
+    .world-cup-matches {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
