@@ -32,26 +32,22 @@ body{
 
 .world-cup-images:hover{
     animation: world-cup;
-    animation: world-cup 5s ease infinite alternate; 
-    
+    animation: world-cup 5s ease infinite alternate;    
 }
 @keyframes world-cup {
     0%{
         background-image: url('../images/wc-02.png');
         background-repeat: no-repeat;
-        background-size: cover;
         background-position: center;
     }
     50%{
         background-image: url('../images/wc-trophy.png');
         background-repeat: no-repeat;
-        background-size: cover;
         background-position: center;
     }
     100%{
             background-image: url('../images/telstar.png');
             background-repeat: no-repeat;
-            background-size: cover;
             background-position: center;
         }
 }
@@ -251,6 +247,9 @@ body{
         row-gap: 24px;
         align-items: center;
     }
+    .world-cup-images img{
+        width: 100%;
+    }
     .menu{
         background-color: transparent;
         align-items: center;
@@ -260,7 +259,6 @@ body{
     }
     .world-cup-detail,.blogs{   
         grid-template-columns: repeat(1, 1fr);
-        
     }
     .footer-menu{
         flex-direction: column;
@@ -292,6 +290,9 @@ body{
             row-gap: 24px;
             align-items: center;
         }
+        .world-cup-images img {
+             width: 98%;
+        }
     
         .menu {
             background-color: transparent;
@@ -309,7 +310,7 @@ body{
         .game-blog-btn{
             display: block;
         }
-    .blogs{
+    .blogs,.world-cup-detail{
         grid-template-columns: repeat(2, 1fr);  
     }
 }
@@ -378,6 +379,9 @@ body{
         flex-direction: column;
         row-gap: 24px;
         align-items: center;
+    }
+    .world-cup-images img {
+        width: 98%;
     }
 
     .menu {
